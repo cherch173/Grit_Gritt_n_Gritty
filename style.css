@@ -131,18 +131,18 @@ button:hover:not(:disabled) {
 
     }
 
-    #hdr{
-    margin-bottom: 3vmin;
+    #hdr {
+        margin: 0 auto;
+        margin-top: -20vmin;
     }
 
-    .h1{
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    .h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-size: 3vmin;
-        margin-top: -1vmin;
     }
 
     #board {
-        margin: 8vmin auto;
+        margin: 6vmin auto;
         grid-template-columns: repeat(3, 25vmin);
         grid-template-rows: repeat(3, 25vmin);
 
