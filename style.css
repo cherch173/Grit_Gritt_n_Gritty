@@ -119,6 +119,6 @@ button:hover:not(:disabled) {
     * {
         color: whitesmoke;
         text-shadow: -1px 1px rgba(245, 137, 49, 0.86), -2px 2px black;
-        font-size: 20px;
+        font-size: 2vmin;
     }
 }
