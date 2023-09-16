@@ -113,12 +113,12 @@ function renderMessage() {
   if (winner === 'T') {
     message.innerHTML = 'A tie? No. <span style="color: darkorange"> Gritty</span> demands <i>Overtime</i>.';
   } else if (winner >= '1') {
-    message.innerHTML = `Sleep with one eye open tonight, bird. <span style="font-size: 4.75vmin"> <span style="color: whitesmoke">YOU </span> </span> win!`;
+    message.innerHTML = `Sleep with one eye open tonight, bird. <span style="font-size: 3.5vmin"> <span style="color: whitesmoke">YOU </span> </span> win!`;
   } else if (winner <= '-1') {
-    message.innerHTML = `Get some wooter. <span style="color: orange"><span style="color: darkorange">GRITTY </span></span> is victorious!`;
+    message.innerHTML = `Get some wooter. <span style="color: orange"><span style="font-size: 3.5vmin">GRITTY </span></span> is victorious!`;
   } else if (turn <= '-1') {
-    message.innerHTML = `...it's <span style="font-size: 5vmin"> <span style="color: darkorange"> GRITTY'S </span> </span> turn.`;
+    message.innerHTML = `...it's <span style="color: orange"> GRITTY'S </span> turn.`;
   } else {
-    message.innerHTML = `<span style="font-size: 4vmin">YER</span>  Turn`;
+    message.innerHTML = `<span style="font-size: 4vmin">YER</span>  turn`;
   }
 }
