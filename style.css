@@ -5,7 +5,7 @@
 html {
     height: 100%;
     width: 100%;
-  }
+}
 
 body {
     /*   viewport units: vh (viewport height)  vw (viewport width)  vmin (smallest between a vh and a vw whatever those values are)  */
@@ -17,12 +17,12 @@ body {
     font-family: 'Amatic SC', cursive;
     background-image: url('https://media.tenor.com/FPeoC2M4Z3IAAAAC/gritty-flyers-mascot.gif');
     background-size: cover;
-    background-color: bisque;
+    background-color: rbg(42, 42, 42);
 }
 
 header {
-    color:rgba(255, 156, 74, 0.86);
-    text-shadow:whitesmoke -1px 1px, darkorange -2px 2px, black -3px 3px;
+    color: rgba(255, 156, 74, 0.86);
+    text-shadow: whitesmoke -1px 1px, darkorange -2px 2px, black -3px 3px;
     font-size: 7vmin;
     letter-spacing: .37vmin;
     margin: -42px;
@@ -30,80 +30,95 @@ header {
     text-align: center;
 }
 
-h1{
+h1 {
     margin-top: 4.2px;
 }
 
 h2 {
-    color:whitesmoke;
-    text-shadow:rgba(255, 176, 112, 0.86) -1px 1px, darkorange -2px 2px, black -3px 3px;
+    color: whitesmoke;
+    text-shadow: rgba(255, 176, 112, 0.86) -1px 1px, darkorange -2px 2px, black -3px 3px;
     font-size: 3.5vmin;
     letter-spacing: .37vmin;
-    
+
 }
 
-    #board {
-        display: grid;
-        grid-template-columns: repeat(3, 17.3vmin);
-        grid-template-rows: repeat(3, 17.3vmin);
-        gap: 1vmin;
-        justify-content: center;
-        align-content:center;
-        flex-wrap: wrap;
-        margin-top: -1.37vmin;
-        margin-bottom: 2vmin;
-    }
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 17.3vmin);
+    grid-template-rows: repeat(3, 17.3vmin);
+    gap: 1vmin;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: -1.37vmin;
+    margin-bottom: 2vmin;
+}
 
-    #board > div {
-        border-radius: 0%;
-        border: 2vmin double rgba(245, 245, 245, 0.73)
+#board>div {
+    border-radius: 0%;
+    border: 2vmin double rgba(245, 245, 245, 0.73);
+    filter: will-change;
+}
+
+#board div.avail {
+    cursor: pointer;
+}
+
+#board>div.avail:hover {
+    transform: scale(1.05);
+    transition: transform 142ms ease-in;
+    border-color: rgba(255, 156, 74, 0.86);
+    filter: drop-shadow(0 0 vmin orange);
+
+}
+
+input {
+    color: whitesmoke;
+    margin: 1vmin 0 0 0 auto;
+}
+
+button {
+    margin-top: 2vmin;
+    margin-bottom: 12vmin;
+    padding: 1.42vmin;
+    font-size: 3vmin;
+    border-radius: 3vmin;
+    border: 6px black double;
+    background-color: rgba(255, 156, 74, 0.86);
     ;
-    }
+    color: rgba(255, 255, 255, .69);
+    text-shadow: -.5px .5px rgba(155, 74, 8, 0.86) -1px 1px black;
+    font-family: 'Amatic SC', cursive;
+    filter: will-change;
+    cursor: pointer;
+}
 
-    #board div.avail {
-        cursor: pointer;
-    }
+button:disabled {
+    background-color: transparent;
+    color: transparent;
+    border: transparent;
+    text-shadow: transparent;
+    font-size: .01px;
+}
 
-    #board > div.avail:hover {
-        transform: scale(1.05);
-        transition: transform 142ms ease-in;
-        border-color: rgba(255, 156, 74, 0.86);
-    }
+button:hover {
+    filter: drop-shadow(0 0 2vmin orange);
+    background-color: rgba(245, 245, 245, 0.73);
+    color: rgba(255, 176, 112, 0.86);
+    transform: scale(105%);
+    transition: ease-in 142ms;
+}
 
-    input {
+button:hover:not(:disabled) {
+    background-color: rgba(245, 245, 245, 0.73);
+    color: rgba(255, 176, 112, 0.86);
+}
+
+
+@media (min-width: 768px) {
+    * {
         color: whitesmoke;
-        margin: 1vmin 0 0 0 auto;
+        text-shadow: -1px 1px rgba(245, 137, 49, 0.86), -2px 2px black;
+        font-size: 20px;
     }
-
-    #button {
-        margin-top: 2vmin;
-        margin-bottom: 12vmin;
-        padding: 1.42vmin;
-        font-size: 3.71vmin;
-        border-radius: 3vmin;
-        border: 6px black double;
-        background-color:rgba(255, 156, 74, 0.86);;
-        color: rgba(255, 255, 255, .69);
-        text-shadow: -2px 2px rgba(155, 74, 8, 0.86) 
-        -3px 3px black;
-        font-family: 'Amatic SC', cursive;
-    }
-
-    button:disabled {
-        background-color: transparent;
-        color: transparent;
-    }
-
-    button:hover:not(:disabled) {
-        background-color: rgba(155, 74, 8, 0.86);
-        color: bisque;
-    }
-
-
-    @media (min-width: 768px) {
-        * {
-            color: whitesmoke;
-            text-shadow: -1px 1px rgba(245, 137, 49, 0.86), -2px 2px black;
-            font-size: 20px;
-        }
-    }
+}

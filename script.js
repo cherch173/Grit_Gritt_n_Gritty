@@ -39,6 +39,7 @@ function initialize() {
   // board = new Array(9).fill(null);
   turn = 1;
   winner = null;
+  button = null;
   render();
 }
 
@@ -48,14 +49,14 @@ function handleMove(evt) {
   const idx = parseInt(evt.target.id.replace('sq-', ''));
   // Guards
   if (
-      // Didn't click <div> in grid
-      isNaN(idx) ||
-      // Square already taken
-      board[idx] ||
-      // Game over
-      winner
+    // Didn't click <div> in grid
+    isNaN(idx) ||
+    // Square already taken
+    board[idx] ||
+    // Game over
+    winner
   ) return;
-  
+
   // Update state (board, turn, winner)
   board[idx] = turn;
   turn *= -1;
@@ -66,7 +67,7 @@ function handleMove(evt) {
 
 function getWinner() {
   for (let i = 0; i < winningCombos.length; i++) {
-      // if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]) === 3) return board[winningCombos[i][0]];
+    // if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]) === 3) return board[winningCombos[i][0]];
   }
   // Less elegant approach:
   if (Math.abs(board[0] + board[1] + board[2]) === 3) return board[0];
@@ -90,34 +91,34 @@ function render() {
 
 function renderBoard() {
   board.forEach(function (sqVal, idx) {
-      const squareEl = document.getElementById(`sq-${idx}`);
-      squareEl.style.backgroundColor = COLOR_LOOKUP[sqVal];
-      // Add class if square available for hover effect
-      squareEl.className = !sqVal ? 'avail' : '';
+    const squareEl = document.getElementById(`sq-${idx}`);
+    squareEl.style.backgroundColor = COLOR_LOOKUP[sqVal];
+    // Add class if square available for hover effect
+    squareEl.className = !sqVal ? 'avail' : '';
   });
 }
 
-function renderMoves () {
-if (turn >= '1') {
-  squareEl.innerText = 'X';
-} else if (turn<= '-1') {
-  squareEl.innerText = 'O';
-}
-else {
+function renderMoves() {
+  if (turn >= '1') {
+    squareEl.innerText = 'X';
+  } else if (turn <= '-1') {
+    squareEl.innerText = 'O';
+  }
+  else {
 
-}
+  }
 }
 
 function renderMessage() {
   if (winner === 'T') {
-      message.innerHTML = 'A tie? No. <span style="color: darkorange"> Gritty</span> demands <i>Overtime</i>.';
+    message.innerHTML = 'A tie? No. <span style="color: darkorange"> Gritty</span> demands <i>Overtime</i>.';
   } else if (winner >= '1') {
-      message.innerHTML = `Sleep with one eye open tonight, bird. <span style="font-size: 4.75vmin"> <span style="color: whitesmoke">YOU </span> </span> win!`;
+    message.innerHTML = `Sleep with one eye open tonight, bird. <span style="font-size: 4.75vmin"> <span style="color: whitesmoke">YOU </span> </span> win!`;
   } else if (winner <= '-1') {
-      message.innerHTML = `Get some wooter. <span style="color: orange"><span style="color: darkorange">GRITTY </span></span> is victorious!`;
+    message.innerHTML = `Get some wooter. <span style="color: orange"><span style="color: darkorange">GRITTY </span></span> is victorious!`;
   } else if (turn <= '-1') {
-      message.innerHTML = `...it's <span style="font-size: 5vmin"> <span style="color: darkorange"> GRITTY'S </span> </span> turn.`;
+    message.innerHTML = `...it's <span style="font-size: 5vmin"> <span style="color: darkorange"> GRITTY'S </span> </span> turn.`;
   } else {
-      message.innerHTML = `<span style="font-size: 4vmin">YER</span>  Turn`;
+    message.innerHTML = `<span style="font-size: 4vmin">YER</span>  Turn`;
   }
 }
