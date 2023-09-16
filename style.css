@@ -17,7 +17,7 @@ body {
     font-family: 'Amatic SC', cursive;
     background-image: url('https://media.tenor.com/FPeoC2M4Z3IAAAAC/gritty-flyers-mascot.gif');
     background-size: cover;
-    background-color: rbg(42, 42, 42);
+    background-color: rgb(42, 42, 42);
 }
 
 header {
@@ -26,13 +26,16 @@ header {
     font-size: 7vmin;
     letter-spacing: .37vmin;
     margin: -42px;
-    margin-top: 1vmin;
+    margin-top: 2vmin;
     text-align: center;
 }
 
 h1 {
-    margin: 1vmin;
+    margin: 2vmin;
     font-size: 2.5vmin;
+    color: whitesmoke;
+    text-shadow: rgba(255, 176, 112, 0.86) -.25px .25px, black -.5px .5px;
+
 }
 
 h2 {
@@ -122,14 +125,14 @@ button:hover:not(:disabled) {
     }
 
     body {
-        background-size: 0cap;
+        background-size: cover;
         background-color: rgb(42, 42, 42);
         font-family: 'Amatic SC', cursive;
 
     }
 
     #hdr{
-    margin: 1vmin;
+    margin-bottom: 3vmin;
     }
 
     .h1{
