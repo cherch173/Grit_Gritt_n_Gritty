@@ -124,6 +124,8 @@ button:hover:not(:disabled) {
     body {
         background-size: 0cap;
         background-color: rgb(42, 42, 42);
+        font-family: 'Amatic SC', cursive;
+
     }
 
     #hdr{
